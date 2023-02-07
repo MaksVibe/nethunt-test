@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test Form</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,21 +16,77 @@
     />
   </head>
   <body>
-    <section>
-      <form>
-        <h2>
-          Sign up for webinar and get our complimentary checklist for creating a
+    <section class="banner_section">
+      <form class="banner_form">
+        <h2 class="form_title">
+          Sign up for webinar and get our
+          <a class="form_link">complimentary checklist</a> for creating a
           perfect profile on LinkedIn!
         </h2>
-        <input type="text" name="first_name" placeholder="First Name" />
-        <input type="text" name="last_name" placeholder="Last Name" />
-        <input type="email" name="email" placeholder="user@company.com" />
-        <input type="text" name="company" placeholder="Company" />
-        <input type="checkbox" name="mailing" />
-        <button>Register now</button>
-        <p>
+        <div class="form_input__wrapper">
+          <label for="first_name" class="form_input__label" hidden
+            >first name</label
+          >
+          <input
+            id="first_name"
+            type="text"
+            name="first_name"
+            placeholder="First Name"
+            class="form_input"
+            required
+            maxlength="20"
+            pattern="[A-Za-z0-9]"
+          />
+        </div>
+        <div class="form_input__wrapper">
+          <label for="last_name" class="form_input__label" hidden
+            >Last Name</label
+          >
+          <input
+            id="last_name"
+            type="text"
+            name="last_name"
+            placeholder="Last Name"
+            class="form_input"
+            required
+            maxlength="20"
+            pattern="[A-Za-z0-9]"
+          />
+        </div>
+        <div class="form_input__wrapper">
+          <label for="email" class="form_input__label" hidden>Email</label>
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="user@company.com"
+            class="form_input"
+            required
+            maxlength="50"
+          />
+        </div>
+        <div class="form_input__wrapper">
+          <label for="company" class="form_input__label" hidden>Company</label>
+          <input
+            id="company"
+            type="text"
+            name="company"
+            placeholder="Company"
+            class="form_input"
+            required
+            maxlength="50"
+            pattern="[A-Za-z0-9]"
+          />
+        </div>
+        <label for="mailing" class="form_checkbox__label">
+          <input id="mailing" type="checkbox" name="mailing" required />
+          I want to receive more sales and lead generation insights and tips
+        </label>
+        <button class="form_button" type="submit">Register now</button>
+        <p class="form_text">
           We use this information to provide you with new content and updates.
-          You may unsubscribe at any time. Check our <a>Privacy Policy</a>.
+          You may unsubscribe at any time. Check our
+          <a class="form_link">Privacy Policy</a>.
         </p>
       </form>
     </section>
