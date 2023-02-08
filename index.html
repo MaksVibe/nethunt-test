@@ -17,14 +17,14 @@
   </head>
   <body>
     <section class="banner_section">
-      <form class="banner_form">
+      <form class="banner_form" id="banner_form">
         <h2 class="form_title">
           Sign up for webinar and get our
           <a class="form_link">complimentary checklist</a> for creating a
           perfect profile on LinkedIn!
         </h2>
         <div class="form_input__wrapper">
-          <label for="first_name" class="form_input__label" hidden
+          <label for="first_name" class="form_input__label hide"
             >first name</label
           >
           <input
@@ -39,8 +39,8 @@
           />
         </div>
         <div class="form_input__wrapper">
-          <label for="last_name" class="form_input__label" hidden
-            >Last Name</label
+          <label for="last_name" class="form_input__label hide"
+            >last name</label
           >
           <input
             id="last_name"
@@ -54,7 +54,7 @@
           />
         </div>
         <div class="form_input__wrapper">
-          <label for="email" class="form_input__label" hidden>Email</label>
+          <label for="email" class="form_input__label hide">Email</label>
           <input
             id="email"
             type="email"
@@ -66,7 +66,7 @@
           />
         </div>
         <div class="form_input__wrapper">
-          <label for="company" class="form_input__label" hidden>Company</label>
+          <label for="company" class="form_input__label hide">Company</label>
           <input
             id="company"
             type="text"
@@ -90,6 +90,7 @@
         </p>
       </form>
     </section>
-    <script src="js/script.js"></script>
+    <script src="js/script.js" module></script>
+    <script src="js/inputLabels.js" module></script>
   </body>
 </html>

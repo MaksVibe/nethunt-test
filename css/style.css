@@ -74,6 +74,10 @@ section {
   color: #2296f3;
 }
 
+.hide {
+  display: none;
+}
+
 .form_input:focus {
   border: 2px solid #2296f3;
 }
