@@ -33,9 +33,7 @@
             name="first_name"
             placeholder="First Name"
             class="form_input"
-            required
-            maxlength="20"
-            pattern="[A-Za-z0-9]"
+            minlength="3"
           />
         </div>
         <div class="form_input__wrapper">
@@ -48,9 +46,7 @@
             name="last_name"
             placeholder="Last Name"
             class="form_input"
-            required
-            maxlength="20"
-            pattern="[A-Za-z0-9]"
+            minlength="3"
           />
         </div>
         <div class="form_input__wrapper">
@@ -61,7 +57,6 @@
             name="email"
             placeholder="user@company.com"
             class="form_input"
-            required
             maxlength="50"
           />
         </div>
@@ -73,14 +68,15 @@
             name="company"
             placeholder="Company"
             class="form_input"
-            required
-            maxlength="50"
-            pattern="[A-Za-z0-9]"
+            minlength="3"
           />
         </div>
         <label for="mailing" class="form_checkbox__label">
-          <input id="mailing" type="checkbox" name="mailing" required />
-          I want to receive more sales and lead generation insights and tips
+          <input id="mailing" type="checkbox" name="mailing" />
+          I want to receive more sales and lead generation insights and tips<br />
+          <span class="checkbox_required display_none"
+            >The checkbox is required</span
+          >
         </label>
         <button class="form_button" type="submit">Register now</button>
         <p class="form_text">
@@ -90,7 +86,7 @@
         </p>
       </form>
     </section>
-    <script src="js/script.js" module></script>
-    <script src="js/inputLabels.js" module></script>
+    <script src="js/inputLabels.js" type="module"></script>
+    <script src="js/script.js" type="module"></script>
   </body>
 </html>
