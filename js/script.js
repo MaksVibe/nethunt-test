@@ -6,13 +6,16 @@ const inputs = [
 ];
 const formCheckbox = document.querySelector("input[name=mailing]");
 const chboxSpan = document.querySelector(".checkbox_required");
-
 const form = document.getElementById("banner_form");
+
 let url = "";
-let firstName = "";
-let lastName = "";
-let email = "";
-let company = "";
+const formData = {
+  first_name: "",
+  last_name: "",
+  email: "",
+  company: "",
+  // mailing: checkboxChecked && "mail",
+};
 let checkboxChecked = false;
 
 const clearForm = () => {
@@ -46,16 +49,16 @@ const handleInput = e => {
     if (e.target === input && e.target.value.length > 0) {
       switch (e.target.id) {
         case "first_name":
-          firstName = e.target.value;
+          formData.first_name = e.target.value;
           break;
         case "last_name":
-          lastName = e.target.value;
+          formData.last_name = e.target.value;
           break;
         case "email":
-          email = e.target.value;
+          formData.email = e.target.value;
           break;
         case "company":
-          company = e.target.value;
+          formData.company = e.target.value;
           break;
       }
       return;
@@ -95,17 +98,12 @@ const handleSubmit = e => {
     return;
   }
 
-  const formData = JSON.stringify({
-    first_name: firstName,
-    last_name: lastName,
-    email: email,
-    company: company,
-    // mailing: checkboxChecked && "mail",
-  });
+  const data = JSON.stringify(formData);
+  console.log("Sending data:", data);
 
   fetch(url + `${form.id}`, {
     method: "POST",
-    body: formData,
+    body: data,
   })
     .then(response => console.log(response))
     .catch(error => console.log(error));
