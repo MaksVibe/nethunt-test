@@ -56,6 +56,10 @@ section {
   outline: none;
 }
 
+.input_invalid {
+  border: 1px solid red;
+}
+
 .form_input__wrapper {
   width: 100%;
   position: relative;
@@ -91,6 +95,11 @@ section {
   line-height: calc(21 / 14);
 }
 
+.checkbox_required {
+  font-size: 12rem;
+  color: red;
+}
+
 .form_button {
   margin-top: 10rem;
   padding: 14rem 30rem;
@@ -107,4 +116,8 @@ section {
   font-size: 12rem;
   font-weight: 400;
   line-height: calc(18 / 12);
+}
+
+.display_none {
+  display: none;
 }
