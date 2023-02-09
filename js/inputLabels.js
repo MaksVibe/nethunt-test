@@ -1,8 +1,3 @@
-const fNameInput = document.getElementById("first_name");
-const lNameInput = document.getElementById("last_name");
-const emailInput = document.getElementById("email");
-const companyInput = document.getElementById("company");
-
 const inputs = [
   document.getElementById("first_name"),
   document.getElementById("last_name"),
@@ -22,21 +17,16 @@ const handleClick = e => {
   }
 };
 
-fNameInput.addEventListener("click", handleClick);
-lNameInput.addEventListener("click", handleClick);
-emailInput.addEventListener("click", handleClick);
-companyInput.addEventListener("click", handleClick);
+inputs.map(input => input.addEventListener("input", handleClick));
 
-window.addEventListener(
-  "click",
-  () => {
-    if (inputs.every(input => input !== document.activeElement)) {
-      inputs.filter(input =>
-        !input.previousElementSibling.classList.contains("hide")
-          ? input.previousElementSibling.classList.toggle("hide")
-          : false
-      );
-    }
-  },
-  false
-);
+const handleWindowClick = () => {
+  if (inputs.every(input => input !== document.activeElement)) {
+    inputs.filter(input =>
+      !input.previousElementSibling.classList.contains("hide")
+        ? input.previousElementSibling.classList.toggle("hide")
+        : false
+    );
+  }
+};
+
+window.addEventListener("click", handleWindowClick, false);
