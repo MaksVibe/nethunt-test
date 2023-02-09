@@ -11,13 +11,13 @@ const handleClick = e => {
   if (elabel.classList.contains("hide")) {
     inputs.map(input => {
       let label = input.previousElementSibling;
-      if (elabel !== label && label.classList.contains("hide")) return false;
+      if (e.target !== input && label.classList.contains("hide")) return false;
       label.classList.toggle("hide");
     });
   }
 };
 
-inputs.map(input => input.addEventListener("input", handleClick));
+inputs.map(input => input.addEventListener("click", handleClick));
 
 const handleWindowClick = () => {
   if (inputs.every(input => input !== document.activeElement)) {
